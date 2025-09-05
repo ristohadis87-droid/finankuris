@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>In-Out Finanku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f7f7f7; }
+        h1 { color: #2c3e50; }
+        form { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; margin: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        label { display: block; margin-top: 15px; }
+        input, select { width: 100%; padding: 8px; margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 20px; background: #27ae60; color: #fff; border: none; border-radius: 4px; cursor: pointer;}
+        button:hover { background: #219150; }
+        .note { font-size: 0.9em; color: #888; margin-top: 20px;}
+    </style>
+</head>
+<body>
+    <h1>In-Out Finanku</h1>
+    <form id="finanForm" action="https://docs.google.com/forms/d/1LBEFzNbfuKYntmqHEGKLoDmjvmWAU_D7ClKffSpGZsY/formResponse" method="POST" target="hidden_iframe" onsubmit="submitToSheet();">
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" id="tanggal" name="entry.1818493842" required>
+
+        <label for="jenis">Jenis:</label>
+        <select id="jenis" name="entry.65477111" required>
+            <option value="">Pilih</option>
+            <option value="Pemasukan">Pemasukan</option>
+            <option value="Pengeluaran">Pengeluaran</option>
+        </select>
+
+        <label for="jumlah">Jumlah (Rp):</label>
+        <input type="number" id="jumlah" name="entry.932435250" min="0" required>
+
+        <label for="keterangan">Keterangan:</label>
+        <input type="text" id="keterangan" name="entry.93666847">
+
+        <button type="submit">Kirim</button>
+        <div class="note">
+            <!--Data akan masuk ke Google Formulir dan Google Spreadsheet Anda.<br>
+            <b>Catatan:</b> Ganti <code>YOUR_FORM_ID</code> dan <code>entry.xxxxxxxx</code> dengan ID Google Formulir Anda. -->
+        Copyleft by Risto
+        </div>
+        
+    </form>
+
+    <iframe name="hidden_iframe" style="display:none;"></iframe>
+
+    <script>
+        function submitToSheet() {
+            // Data akan otomatis masuk ke Google Spreadsheet melalui Google Formulir
+            alert('Data berhasil dikirim!');
+        }
+    </script>
+</body>
+</html>
